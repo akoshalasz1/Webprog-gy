@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Vaszilij EDC Galéria</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Vaszilij EDC Galéria</h1>
+            
+<nav>
+    <ul>
+        <li><a href="index.html">Kezdőlap</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="gallery.html">Galéria</a></li>
+        <li><a href="admin.html">Admin</a></li>
+    </ul>
+</nav>
+
+        </div>
+    </header>
+
+    <main>
+        <section id="gallery">
+            <h2>Galéria</h2>
+            <div class="gallery">
+                <div class="slide active"><img src="https://images.pexels.com/photos/65128/pexels-photo-65128.jpeg" alt="Termék 1"></div>
+                <div class="slide"><img src="https://images.pexels.com/photos/1619311/pexels-photo-1619311.jpeg" alt="Termék 2"></div>
+                <div class="slide"><img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg" alt="Termék 3"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Vaszilij EDC | Galéria oldal.</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 3000);
+    </script>
+
+<script>
+const toggleButton = document.createElement('button');
+toggleButton.id = 'darkModeToggle';
+toggleButton.textContent = '🌙 Dark Mode';
+document.body.appendChild(toggleButton);
+
+let darkMode = false;
+toggleButton.addEventListener('click', () => {
+    darkMode = !darkMode;
+    if (darkMode) {
+        document.documentElement.style.setProperty('--bg-color', '#121212');
+        document.documentElement.style.setProperty('--text-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--header-bg', '#1f1f1f');
+        document.documentElement.style.setProperty('--header-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-hover', '#f39c12');
+        document.documentElement.style.setProperty('--button-bg', '#444');
+        document.documentElement.style.setProperty('--button-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--button-hover', '#f39c12');
+        toggleButton.textContent = '☀️ Light Mode';
+    } else {
+        document.documentElement.style = '';
+        toggleButton.textContent = '🌙 Dark Mode';
+    }
+});
+</script>
+
+
+<script>
+const overlay = document.createElement('div');
+overlay.id = 'lightboxOverlay';
+overlay.innerHTML = '<span>&times;</span><img src="" alt="lightbox image">';
+document.body.appendChild(overlay);
+
+document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+        overlay.style.display = 'flex';
+        overlay.querySelector('img').src = img.src;
+    });
+});
+
+overlay.querySelector('span').addEventListener('click', () => {
+    overlay.style.display = 'none';
+});
+
+overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+        overlay.style.display = 'none';
+    }
+});
+</script>
+
+</body>
+</html>

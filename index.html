@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Vaszilij EDC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Vaszilij EDC</h1>
+            
+<nav>
+    <ul>
+        <li><a href="index.html">Kezdőlap</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="gallery.html">Galéria</a></li>
+        <li><a href="admin.html">Admin</a></li>
+    </ul>
+</nav>
+
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Üdvözöllek!</h2>
+            <p>Ez a Vaszilij EDC – egy magyar every day carry közösség blogja. Kések, felszerelések, tesztek és élmények!</p>
+        </section>
+
+        <section id="blog">
+            <h2>Blogbejegyzések</h2>
+            <article>
+                <h3>Ganzo G704 bemutató</h3>
+                <p>Részletes elemzés egy költséghatékony és megbízható folder késről.</p>
+            </article>
+            <article>
+                <h3>Outdoor felszerelések 2025</h3>
+                <p>Milyen eszközökre számíthatunk idén? Megnéztük a legjobbakat.</p>
+            </article>
+            <article>
+                <h3>EDC elrendezés tippek</h3>
+                <p>Hogyan rendszerezzük az EDC felszerelésünket hatékonyan?</p>
+            </article>
+        </section>
+
+        <section id="gallery">
+            <h2>Galéria</h2>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/300x200?text=Kés+1" alt="Kés 1">
+                <img src="https://via.placeholder.com/300x200?text=Kés+2" alt="Kés 2">
+                <img src="https://via.placeholder.com/300x200?text=Kés+3" alt="Kés 3">
+                <img src="https://via.placeholder.com/300x200?text=Felszerelés+1" alt="Felszerelés 1">
+                <img src="https://via.placeholder.com/300x200?text=Felszerelés+2" alt="Felszerelés 2">
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Kapcsolat</h2>
+            <form>
+                <label for="name">Név:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Tárgy:</label>
+                <input type="text" id="subject" name="subject">
+
+                <label for="message">Üzenet:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Küldés</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Vaszilij EDC | Minden jog fenntartva.</p>
+    </footer>
+
+<script>
+const toggleButton = document.createElement('button');
+toggleButton.id = 'darkModeToggle';
+toggleButton.textContent = '🌙 Dark Mode';
+document.body.appendChild(toggleButton);
+
+let darkMode = false;
+toggleButton.addEventListener('click', () => {
+    darkMode = !darkMode;
+    if (darkMode) {
+        document.documentElement.style.setProperty('--bg-color', '#121212');
+        document.documentElement.style.setProperty('--text-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--header-bg', '#1f1f1f');
+        document.documentElement.style.setProperty('--header-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-hover', '#f39c12');
+        document.documentElement.style.setProperty('--button-bg', '#444');
+        document.documentElement.style.setProperty('--button-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--button-hover', '#f39c12');
+        toggleButton.textContent = '☀️ Light Mode';
+    } else {
+        document.documentElement.style = '';
+        toggleButton.textContent = '🌙 Dark Mode';
+    }
+});
+</script>
+
+
+<script>
+const toggleButton = document.createElement('button');
+toggleButton.id = 'darkModeToggle';
+toggleButton.textContent = '🌙 Dark Mode';
+document.body.appendChild(toggleButton);
+
+let darkMode = false;
+toggleButton.addEventListener('click', () => {
+    darkMode = !darkMode;
+    if (darkMode) {
+        document.documentElement.style.setProperty('--bg-color', '#121212');
+        document.documentElement.style.setProperty('--text-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--header-bg', '#1f1f1f');
+        document.documentElement.style.setProperty('--header-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-hover', '#f39c12');
+        document.documentElement.style.setProperty('--button-bg', '#444');
+        document.documentElement.style.setProperty('--button-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--button-hover', '#f39c12');
+        toggleButton.textContent = '☀️ Light Mode';
+    } else {
+        document.documentElement.style = '';
+        toggleButton.textContent = '🌙 Dark Mode';
+    }
+});
+</script>
+
+</body>
+</html>

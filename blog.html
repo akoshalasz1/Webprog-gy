@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Vaszilij EDC Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Vaszilij EDC Blog</h1>
+            
+<nav>
+    <ul>
+        <li><a href="index.html">Kezdőlap</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="gallery.html">Galéria</a></li>
+        <li><a href="admin.html">Admin</a></li>
+    </ul>
+</nav>
+
+        </div>
+    </header>
+
+    <main>
+        <section id="blog">
+            <h2>Blogcikkek</h2>
+            <article>
+                <h3>Kés élezési technikák</h3>
+                <p>Tippek és trükkök a profi élezéshez.</p>
+            </article>
+            <article>
+                <h3>Új outdoor felszerelések</h3>
+                <p>Bemutatjuk a 2025-ös szezon legújabb darabjait.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Vaszilij EDC | Blog oldal.</p>
+    </footer>
+
+<script>
+const toggleButton = document.createElement('button');
+toggleButton.id = 'darkModeToggle';
+toggleButton.textContent = '🌙 Dark Mode';
+document.body.appendChild(toggleButton);
+
+let darkMode = false;
+toggleButton.addEventListener('click', () => {
+    darkMode = !darkMode;
+    if (darkMode) {
+        document.documentElement.style.setProperty('--bg-color', '#121212');
+        document.documentElement.style.setProperty('--text-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--header-bg', '#1f1f1f');
+        document.documentElement.style.setProperty('--header-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-hover', '#f39c12');
+        document.documentElement.style.setProperty('--button-bg', '#444');
+        document.documentElement.style.setProperty('--button-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--button-hover', '#f39c12');
+        toggleButton.textContent = '☀️ Light Mode';
+    } else {
+        document.documentElement.style = '';
+        toggleButton.textContent = '🌙 Dark Mode';
+    }
+});
+</script>
+
+
+<script>
+const toggleButton = document.createElement('button');
+toggleButton.id = 'darkModeToggle';
+toggleButton.textContent = '🌙 Dark Mode';
+document.body.appendChild(toggleButton);
+
+let darkMode = false;
+toggleButton.addEventListener('click', () => {
+    darkMode = !darkMode;
+    if (darkMode) {
+        document.documentElement.style.setProperty('--bg-color', '#121212');
+        document.documentElement.style.setProperty('--text-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--header-bg', '#1f1f1f');
+        document.documentElement.style.setProperty('--header-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-hover', '#f39c12');
+        document.documentElement.style.setProperty('--button-bg', '#444');
+        document.documentElement.style.setProperty('--button-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--button-hover', '#f39c12');
+        toggleButton.textContent = '☀️ Light Mode';
+    } else {
+        document.documentElement.style = '';
+        toggleButton.textContent = '🌙 Dark Mode';
+    }
+});
+</script>
+
+</body>
+</html>
