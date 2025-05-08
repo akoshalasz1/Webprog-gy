@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+
+
     <header>
         <div class="container">
             <h1>Admin felület</h1>
@@ -94,6 +97,41 @@ toggleButton.addEventListener('click', () => {
         document.documentElement.style = '';
         toggleButton.textContent = '🌙 Dark Mode';
     }
+});
+</script>
+
+
+<script>
+const toggleButton = document.createElement('button');
+toggleButton.id = 'darkModeToggle';
+toggleButton.textContent = localStorage.getItem('darkMode') === 'true' ? '☀️ Light Mode' : '🌙 Dark Mode';
+document.body.appendChild(toggleButton);
+
+function applyDarkMode(enabled) {
+    if (enabled) {
+        document.documentElement.style.setProperty('--bg-color', '#121212');
+        document.documentElement.style.setProperty('--text-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--header-bg', '#1f1f1f');
+        document.documentElement.style.setProperty('--header-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-hover', '#f39c12');
+        document.documentElement.style.setProperty('--button-bg', '#444');
+        document.documentElement.style.setProperty('--button-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--button-hover', '#f39c12');
+        toggleButton.textContent = '☀️ Light Mode';
+    } else {
+        document.documentElement.style = '';
+        toggleButton.textContent = '🌙 Dark Mode';
+    }
+}
+
+let darkMode = localStorage.getItem('darkMode') === 'true';
+applyDarkMode(darkMode);
+
+toggleButton.addEventListener('click', () => {
+    darkMode = !darkMode;
+    localStorage.setItem('darkMode', darkMode);
+    applyDarkMode(darkMode);
 });
 </script>
 

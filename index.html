@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+
+
     <header>
         <div class="container">
             <h1>Vaszilij EDC</h1>
@@ -45,16 +48,7 @@
             </article>
         </section>
 
-        <section id="gallery">
-            <h2>Galéria</h2>
-            <div class="gallery">
-                <img src="https://via.placeholder.com/300x200?text=Kés+1" alt="Kés 1">
-                <img src="https://via.placeholder.com/300x200?text=Kés+2" alt="Kés 2">
-                <img src="https://via.placeholder.com/300x200?text=Kés+3" alt="Kés 3">
-                <img src="https://via.placeholder.com/300x200?text=Felszerelés+1" alt="Felszerelés 1">
-                <img src="https://via.placeholder.com/300x200?text=Felszerelés+2" alt="Felszerelés 2">
-            </div>
-        </section>
+        
 
         <section id="contact">
             <h2>Kapcsolat</h2>
@@ -132,6 +126,41 @@ toggleButton.addEventListener('click', () => {
         document.documentElement.style = '';
         toggleButton.textContent = '🌙 Dark Mode';
     }
+});
+</script>
+
+
+<script>
+const toggleButton = document.createElement('button');
+toggleButton.id = 'darkModeToggle';
+toggleButton.textContent = localStorage.getItem('darkMode') === 'true' ? '☀️ Light Mode' : '🌙 Dark Mode';
+document.body.appendChild(toggleButton);
+
+function applyDarkMode(enabled) {
+    if (enabled) {
+        document.documentElement.style.setProperty('--bg-color', '#121212');
+        document.documentElement.style.setProperty('--text-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--header-bg', '#1f1f1f');
+        document.documentElement.style.setProperty('--header-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-hover', '#f39c12');
+        document.documentElement.style.setProperty('--button-bg', '#444');
+        document.documentElement.style.setProperty('--button-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--button-hover', '#f39c12');
+        toggleButton.textContent = '☀️ Light Mode';
+    } else {
+        document.documentElement.style = '';
+        toggleButton.textContent = '🌙 Dark Mode';
+    }
+}
+
+let darkMode = localStorage.getItem('darkMode') === 'true';
+applyDarkMode(darkMode);
+
+toggleButton.addEventListener('click', () => {
+    darkMode = !darkMode;
+    localStorage.setItem('darkMode', darkMode);
+    applyDarkMode(darkMode);
 });
 </script>
 

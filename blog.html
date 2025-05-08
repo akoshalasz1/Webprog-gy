@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+
+
     <header>
         <div class="container">
             <h1>Vaszilij EDC Blog</h1>
@@ -24,17 +27,31 @@
     </header>
 
     <main>
-        <section id="blog">
-            <h2>Blogcikkek</h2>
-            <article>
-                <h3>Kés élezési technikák</h3>
-                <p>Tippek és trükkök a profi élezéshez.</p>
-            </article>
-            <article>
-                <h3>Új outdoor felszerelések</h3>
-                <p>Bemutatjuk a 2025-ös szezon legújabb darabjait.</p>
-            </article>
-        </section>
+        
+<section id="blog">
+  <h2>Legújabb cikkek</h2>
+  <div class="blog-cards">
+    <div class="card">
+      <img src="https://images.pexels.com/photos/65128/pexels-photo-65128.jpeg" alt="Múlt, jelen, jövő">
+      <h3>Múlt, jelen, jövő</h3>
+      <p>Visszatekintés a Vaszilij EDC történetére és jövőbeli terveire.</p>
+      <a href="https://vaszilijedc.hu/mult-jelen-jovo/" target="_blank">Tovább olvasom</a>
+    </div>
+    <div class="card">
+      <img src="https://images.pexels.com/photos/1619311/pexels-photo-1619311.jpeg" alt="Kések és edukáció">
+      <h3>Kések és edukáció</h3>
+      <p>Az edukáció szerepe a késkultúrában és a mindennapi hordásban.</p>
+      <a href="https://vaszilijedc.hu/kesek-es-edukacio/" target="_blank">Tovább olvasom</a>
+    </div>
+    <div class="card">
+      <img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg" alt="Karácsonyi ajánló 2022">
+      <h3>Karácsonyi ajánló 2022</h3>
+      <p>Ajándékötletek a késrajongóknak az ünnepekre.</p>
+      <a href="https://vaszilijedc.hu/karacsonyi-ajanlo-2022/" target="_blank">Tovább olvasom</a>
+    </div>
+  </div>
+</section>
+
     </main>
 
     <footer>
@@ -93,6 +110,41 @@ toggleButton.addEventListener('click', () => {
         document.documentElement.style = '';
         toggleButton.textContent = '🌙 Dark Mode';
     }
+});
+</script>
+
+
+<script>
+const toggleButton = document.createElement('button');
+toggleButton.id = 'darkModeToggle';
+toggleButton.textContent = localStorage.getItem('darkMode') === 'true' ? '☀️ Light Mode' : '🌙 Dark Mode';
+document.body.appendChild(toggleButton);
+
+function applyDarkMode(enabled) {
+    if (enabled) {
+        document.documentElement.style.setProperty('--bg-color', '#121212');
+        document.documentElement.style.setProperty('--text-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--header-bg', '#1f1f1f');
+        document.documentElement.style.setProperty('--header-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-color', '#f1f1f1');
+        document.documentElement.style.setProperty('--link-hover', '#f39c12');
+        document.documentElement.style.setProperty('--button-bg', '#444');
+        document.documentElement.style.setProperty('--button-text', '#f1f1f1');
+        document.documentElement.style.setProperty('--button-hover', '#f39c12');
+        toggleButton.textContent = '☀️ Light Mode';
+    } else {
+        document.documentElement.style = '';
+        toggleButton.textContent = '🌙 Dark Mode';
+    }
+}
+
+let darkMode = localStorage.getItem('darkMode') === 'true';
+applyDarkMode(darkMode);
+
+toggleButton.addEventListener('click', () => {
+    darkMode = !darkMode;
+    localStorage.setItem('darkMode', darkMode);
+    applyDarkMode(darkMode);
 });
 </script>
 

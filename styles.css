@@ -171,3 +171,121 @@ footer {
     color: white;
     cursor: pointer;
 }
+
+
+.blog-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--bg-color, #fff);
+  color: var(--text-color, #000);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card h3 {
+  margin: 15px;
+}
+
+.card p {
+  margin: 0 15px 15px;
+}
+
+.card a {
+  display: block;
+  margin: 0 15px 15px;
+  text-decoration: none;
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.gallery-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+#lightboxOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: row;
+}
+
+#lightboxOverlay img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#lightboxOverlay .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#lightboxOverlay .arrow {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 20px;
+}
+
+#lightboxOverlay .arrow.left {
+    position: absolute;
+    left: 10px;
+}
+
+#lightboxOverlay .arrow.right {
+    position: absolute;
+    right: 10px;
+}
