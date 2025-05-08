@@ -1,48 +1,9 @@
 <?php if (session_status() === PHP_SESSION_NONE) { session_start(); } ?>
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-$host = 'localhost';
-$db = 'mydb';
-$user = 'root';
-$pass = '';
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = trim($_POST['username']);
-        $email = trim($_POST['email']);
-        $password = trim($_POST['password']);
-        $stmt = $pdo->prepare("SELECT id FROM users WHERE username = :username OR email = :email");
-        $stmt->execute(['username' => $username, 'email' => $email]);
-
-        if ($stmt->fetch()) {
-            $_SESSION['message'] = 'Sikertelen regisztráció: felhasználónév vagy e-mail foglalt';
-            header('Location: register.php');
-            exit();
-        } else {
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
-            $stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashedPassword]);
-
-            $_SESSION['message'] = 'Sikeres regisztráció! Jelentkezz be.';
-            header('Location: login.php');
-            exit();
-        }
-    }
-} catch (PDOException $e) {
-    die("Adatbázis hiba: " . $e->getMessage());
-}
-?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Regisztráció</title>
+    <title>Vaszilij EDC</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -69,22 +30,41 @@ try {
         </div>
     </nav>
 </header>
-
 <main>
     <?php if (isset($_SESSION['message'])) { echo "<p class='message'>" . $_SESSION['message'] . "</p>"; unset($_SESSION['message']); } ?>
-    <h2>Regisztráció</h2>
-    <div class=\"form-card\"><form method="POST" action="register.php">
-        <label>Felhasználónév:</label><br>
-        <input type="text" name="username" required><br>
-        <label>E-mail cím:</label><br>
-        <input type="email" name="email" required><br>
-        <label>Jelszó:</label><br>
-        <input type="password" name="password" required><br><br>
-        <input type="submit" value="Regisztráció">
-    </form></div>
+    <section id="home">
+        <h2>Üdvözöllek!</h2>
+        <p>Ez a Vaszilij EDC – egy magyar every day carry közösség ja. Kések, felszerelések, tesztek és élmények!</p>
+    </section>
+
+    <section id="">
+        <h2>bejegyzések</h2>
+        <article><h3>Ganzo G704 bemutató</h3><p>Részletes elemzés egy költséghatékony és megbízható folder késről.</p></article>
+        <article><h3>Outdoor felszerelések 2025</h3><p>Milyen eszközökre számíthatunk idén? Megnéztük a legjobbakat.</p></article>
+        <article><h3>EDC elrendezés tippek</h3><p>Hogyan rendszerezzük az EDC felszerelésünket hatékonyan?</p></article>
+    </section>
+
+    <section id="contact">
+        <h2>Kapcsolat</h2>
+        <form>
+            <label for="name">Név:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="subject">Tárgy:</label>
+            <input type="text" id="subject" name="subject">
+            <label for="message">Üzenet:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Küldés</button>
+        </form>
+    </section>
 </main>
 
 <footer><p>&copy; 2025 Vaszilij EDC | Minden jog fenntartva.</p></footer>
+
+
+
+
 
 
 <script>

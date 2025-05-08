@@ -289,3 +289,181 @@ footer {
     position: absolute;
     right: 10px;
 }
+
+/* Dark mode styles */
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --header-bg: #f1f1f1;
+    --header-text: #000000;
+    --link-color: #0000ee;
+    --link-hover: #ff6600;
+    --button-bg: #e0e0e0;
+    --button-text: #000000;
+    --button-hover: #ff6600;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-bg);
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--header-text);
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--link-hover);
+    transform: scale(1.1);
+}
+
+.nav-right .username {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--button-hover);
+}
+
+.form-card {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-card input, .form-card button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1em;
+}
+
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --header-bg: #1f1f1f;
+    --header-text: #ffffff;
+    --link-color: #bb86fc;
+    --link-hover: #03dac6;
+    --button-bg: #333333;
+    --button-text: #ffffff;
+    --button-hover: #444444;
+}
+
+
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-wrapper {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10000;
+}
+
+.lightbox-prev, .lightbox-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 60px;
+    user-select: none;
+    transition: 0.3s;
+    z-index: 10000;
+}
+
+.lightbox-prev {
+    left: 10px;
+}
+
+.lightbox-next {
+    right: 10px;
+}
+
+.lightbox-prev:hover, .lightbox-next:hover, .lightbox-close:hover {
+    color: #ccc;
+}
