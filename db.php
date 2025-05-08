@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $db = 'vaszilij';
-$user = 'root'; // vagy saját MySQL felhasználónév
-//$pass = '';     // ha van jelszó, írd be
+$user = 'root';
+$pass = '';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
