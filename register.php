@@ -5,9 +5,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $host = 'localhost';
-$db = 'mydb';
-$user = 'root';
-$pass = '';
+$db = 'usersdb';
+$user = 'usersdb';
+$pass = '20031015YD7XS4';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
@@ -54,6 +54,7 @@ try {
             <a href="index.php">Főoldal</a>
             <a href="blog.php">Blog</a>
             <a href="gallery.php">Galéria</a>
+            <a href="kapcsolat.php">Kapcsolat</a>
             <?php if (isset($_SESSION['username'])): ?>
 <a href="admin.php">Admin</a>
 <?php endif; ?>

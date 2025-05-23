@@ -15,6 +15,7 @@
             <a href="index.php">Főoldal</a>
             <a href="blog.php">Blog</a>
             <a href="gallery.php">Galéria</a>
+            <a href="kapcsolat.php">Kapcsolat</a>
             <?php if (isset($_SESSION['username'])): ?>
 <a href="admin.php">Admin</a>
 <?php endif; ?>
@@ -44,20 +45,23 @@
         <article><h3>EDC elrendezés tippek</h3><p>Hogyan rendszerezzük az EDC felszerelésünket hatékonyan?</p></article>
     </section>
 
-    <section id="contact">
-        <h2>Kapcsolat</h2>
-        <form>
-            <label for="name">Név:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="subject">Tárgy:</label>
-            <input type="text" id="subject" name="subject">
-            <label for="message">Üzenet:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Küldés</button>
-        </form>
-    </section>
+        <!-- VIDEÓK -->
+        <section class="video-section">
+            <h2>Videók</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/0VRhcXBykbs?si=wL22guTfGoHB5xrx" title="YouTube video player" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/UU_LxMNSBVk?si=c88lRYh4qXpIjdMw" title="YouTube video player" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- TÉRKÉP -->
+        <section class="map-section">
+            <h2>Hol találsz meg minket?</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.597935270483!2d19.13153787622275!3d47.47826397117836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c38e0a3ad247%3A0x9c3a38ff79366027!2sBudapest%2C%20Cserkesz%20u.%2032%2C%201105!5e0!3m2!1shu!2shu!4v1747837858748!5m2!1shu!2shu" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
 </main>
 
 <footer><p>&copy; 2025 Vaszilij EDC | Minden jog fenntartva.</p></footer>

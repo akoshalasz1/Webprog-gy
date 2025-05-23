@@ -15,6 +15,7 @@
             <a href="index.php">Főoldal</a>
             <a href="blog.php">Blog</a>
             <a href="gallery.php">Galéria</a>
+            <a href="kapcsolat.php">Kapcsolat</a>
             <?php if (isset($_SESSION['username'])): ?>
 <a href="admin.php">Admin</a>
 <?php endif; ?>
@@ -38,20 +39,20 @@
 
     <main>
         
-<section id="">
+<section id="blog-cards">
   <h2>Legújabb cikkek</h2>
-  <div class="-cards">
+  <div class="blog-cards">
     <div class="card">
       <img src="https://images.pexels.com/photos/65128/pexels-photo-65128.jpeg" alt="Múlt, jelen, jövő">
       <h3>Múlt, jelen, jövő</h3>
       <p>Visszatekintés a Vaszilij EDC történetére és jövőbeli terveire.</p>
-      <a href="https://vaszilijedc.hu/mult-jelen-jovo/" target="_blank">Tovább olvasom</a>
+      <a href="cikk1.html" target="_blank">Tovább olvasom</a>
     </div>
     <div class="card">
       <img src="https://images.pexels.com/photos/1619311/pexels-photo-1619311.jpeg" alt="Kések és edukáció">
       <h3>Kések és edukáció</h3>
       <p>Az edukáció szerepe a késkultúrában és a mindennapi hordásban.</p>
-      <a href="https://vaszilijedc.hu/kesek-es-edukacio/" target="_blank">Tovább olvasom</a>
+      <a href="cikk2.html" target="_blank">Tovább olvasom</a>
     </div>
     <div class="card">
       <img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg" alt="Karácsonyi ajánló 2022">

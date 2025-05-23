@@ -15,6 +15,7 @@
             <a href="index.php">Főoldal</a>
             <a href="blog.php">Blog</a>
             <a href="gallery.php">Galéria</a>
+            <a href="kapcsolat.php">Kapcsolat</a>
             <?php if (isset($_SESSION['username'])): ?>
 <a href="admin.php">Admin</a>
 <?php endif; ?>

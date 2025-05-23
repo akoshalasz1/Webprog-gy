@@ -15,11 +15,12 @@
             <a href="index.php">Főoldal</a>
             <a href="blog.php">Blog</a>
             <a href="gallery.php">Galéria</a>
+            <a href="kapcsolat.php">Kapcsolat</a>
             <?php if (isset($_SESSION['username'])): ?>
 <a href="admin.php">Admin</a>
 <?php endif; ?>
         </div>
-        <div class="nav-right">
+        <div class="navbar-right">
             <?php if(isset($_SESSION['username'])): ?>
                 <span class="username">👤 <?php echo $_SESSION['username']; ?></span>
                 <a href="logout.php" class="btn">Kijelentkezés</a>
@@ -29,26 +30,6 @@
             <?php endif; ?>
         </div>
     </nav>
-</header>
-
-
-
-<header>
-    <div class="container">
-        <h1>Vaszilij EDC</h1>
-        <nav>
-            <ul>
-                <?php if (isset($_SESSION['username'])): ?>
-                    <li><a href=".php"></a></li>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['username'])): ?>
-                    <li style="float:right;">Bejelentkezve: <?php echo $_SESSION['username']; ?> | <a href="logout.php">Kijelentkezés</a></li>
-                <?php else: ?>
-                    <li style="float:right;"><a href="login.php">Bejelentkezés</a> | <a href="register.php">Regisztráció</a></li>
-                <?php endif; ?>
-            </ul>
-        </nav>
-    </div>
 </header>
 
     <header>
